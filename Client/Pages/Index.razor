@@ -1,0 +1,40 @@
+﻿@page "/"
+
+<div>
+
+    <h3> Películas</h3>
+    @foreach (var pel in ObtenerPeliculas())
+    {
+        <div>
+            <p> Titulo: <b>@pel.Titulo</b></p>
+            <p> Fecha Lanzamiento: <b>@pel.Lanzamiento.ToString("dd" + "-" + "MM" + "-" + "yyyy")</b></p>
+        </div>
+    }
+    @for (var i=0;i<Peliculas.Count;i++)
+    {
+        <div>
+            <p> Titulo: <b>@Peliculas[i].Titulo</b></p>
+            <p> Fecha Lanzamiento: <b>@Peliculas[i].Lanzamiento.ToString("dd" + "-" + "MM" + "-" + "yyyy")</b></p>
+        </div>
+    }
+
+
+</div>
+
+@code
+{
+
+    private List<Pelicula> ObtenerPeliculas()
+    {
+        return new List<Pelicula>()
+        {
+            new Pelicula() { Titulo = "Spiderman", Lanzamiento = new DateTime(2021, 7, 2) },
+            new Pelicula() { Titulo = "Cat Woman", Lanzamiento = new DateTime(2020, 10, 8) },
+            new Pelicula() { Titulo = "Superman", Lanzamiento = new DateTime(2021, 29, 12) }
+        };
+    }
+
+    public List<Pelicula>Peliculas { get { return ObtenerPeliculas(); } }
+
+
+}
