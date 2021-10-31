@@ -3,18 +3,19 @@
 <div>
 
     @*<h3> Películas</h3>
-    @foreach (var pel in ObtenerPeliculas())
-    {
-        <div>
-            <p> Titulo: <b>@pel.Titulo</b></p>
-            <p> Fecha Lanzamiento: <b>@pel.Lanzamiento.ToString("dd" + "-" + "MM" + "-" + "yyyy")</b></p>
-        </div>
-    }*@
+        @foreach (var pel in ObtenerPeliculas())
+        {
+            <div>
+                <p> Titulo: <b>@pel.Titulo</b></p>
+                <p> Fecha Lanzamiento: <b>@pel.Lanzamiento.ToString("dd" + "-" + "MM" + "-" + "yyyy")</b></p>
+            </div>
+        }*@
 
     if(Peliculas==null)
     {
-            @*<img src="https"*@
-        <text>"Cargando...."</text>
+    @*No consigo cargar e licono  Loading desde la web del video*@
+    @*<img src="https"*@
+    <text>"Cargando...."</text>
 
     }
 
